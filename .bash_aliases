@@ -22,3 +22,5 @@ alias venv="source .venv/bin/activate"
 
 # Git
 alias gs="git status"
+
+alias cl="clear"

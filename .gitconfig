@@ -1,9 +1,26 @@
+[user]
+	name = fbiernat
+	email = filipbiernat@gmail.com
+[core]
+	editor = nano
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [color]
 	ui = auto
 [alias]
-	st = status
-	ci = commit
+	st = status -sb
+	cm = commit -m
 	co = checkout
 	br = branch
+	bl = branch -l
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	ll = log --oneline
+	rv = remote -v
+	d = diff
+	dv = difftool -t vimdiff -y
+	gl = config --global -l
+	se = !git rev-list --all | xargs git grep -F 

@@ -160,10 +160,9 @@ mkcd() {
 	mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-# Clear terminal
-alias ll="ls -l"
-alias la="ls -la"
-alias cl="clear"
-
 # Add exercism to PATH
 export PATH=~/bin:$PATH
+
+if [-f ~/.bash_aliases ]; then
+	.~/.bash_aliases
+fi

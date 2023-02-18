@@ -11,7 +11,7 @@
 [color]
 	ui = auto
 [alias]
-	st = status -sb
+	st = status # -sb
 	cm = commit -m
 	co = checkout
 	br = branch

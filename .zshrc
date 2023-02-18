@@ -167,6 +167,6 @@ mkcd() {
 # Add exercism to PATH
 export PATH=~/bin:$PATH
 
-if [-f ~/.bash_aliases ]; then
-	.~/.bash_aliases
+if [ -f ~/.bash_aliases ]; then
+	zsh ~/.bash_aliases
 fi

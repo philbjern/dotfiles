@@ -214,8 +214,7 @@ export h() {
 	# Go to home directory, clear console and run neofetch and display current weather
 	cd
 	clear
-	neofetch
-	weather
+	neofetch && weather
 }
 
 h

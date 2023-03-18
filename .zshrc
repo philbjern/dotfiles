@@ -151,6 +151,35 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Add exercism to PATH
+export PATH=~/bin:$PATH
+
+
+#     _    _ _
+#    / \  | (_) __ _ ___  ___  ___
+#   / _ \ | | |/ _` / __|/ _ \/ __|
+#  / ___ \| | | (_| \__ \  __/\__ \
+# /_/   \_\_|_|\__,_|___/\___||___/
+# 
+#
+# Load .bash_aliases file
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+
+#  _____                 _   _
+# |  ___|   _ _ __   ___| |_(_) ___  _ __  ___
+# | |_ | | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# |  _|| |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+# 
+#
+# Make directory and cd to it
+mkcd() {
+	mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 # Push to ghpages branch (git-deploy) alias
 export gitdeploy() {
 	if [ -z "$1" ]
@@ -162,19 +191,8 @@ export gitdeploy() {
 	git subtree push --prefix $1 origin gh-pages
 }
 
-# Make directory and cd to it
-mkcd() {
-	mkdir -p -- "$1" && cd -P -- "$1"
-}
-
-# Add exercism to PATH
-export PATH=~/bin:$PATH
-
-if [ -f ~/.bash_aliases ]; then
-	zsh ~/.bash_aliases
-fi
-
 export weather() {
+	# Fetch current temperature info from wttr.in API
 	if [ -z "$1" ]
 	then 
 		curl "wttr.in/Bochnia?format=3"
@@ -185,6 +203,12 @@ export weather() {
 	fi
 }
 
-clear
-neofetch
-weather
+export h() {
+	# Go to home directory, clear console and run neofetch and display current weather
+	cd
+	clear
+	neofetch
+	weather
+}
+
+h

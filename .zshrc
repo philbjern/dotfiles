@@ -15,15 +15,18 @@ export ZSH="/home/filip/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="steeef"
 # ZSH_THEME="strug"
 ZSH_THEME="bira"
+# ZSH_THEME=half-life
+# ZSH_THEME=flazz
 
 #POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status macos time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 ZLE_PROMPT_INDENT=0
 
@@ -87,7 +90,7 @@ ZLE_PROMPT_INDENT=0
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -170,3 +173,18 @@ export PATH=~/bin:$PATH
 if [ -f ~/.bash_aliases ]; then
 	zsh ~/.bash_aliases
 fi
+
+export weather() {
+	if [ -z "$1" ]
+	then 
+		curl "wttr.in/Bochnia?format=3"
+	else
+		city=$1
+		cityUpper="$(tr '[:lower:]' '[:upper:]' <<< ${city:0:1})${city:1}"
+		curl "wttr.in/$cityUpper?format=3"
+	fi
+}
+
+clear
+neofetch
+weather

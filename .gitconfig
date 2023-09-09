@@ -1,6 +1,3 @@
-[user]
-	name = fbiernat
-	email = filipbiernat@gmail.com
 [core]
 	editor = nano
 [filter "lfs"]

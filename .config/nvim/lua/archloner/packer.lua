@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -13,19 +13,31 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	'rose-pine/neovim',
-	as = 'rose-pine',
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-	end
-  })
+  -- Color schemes
+  use { 'rose-pine/neovim', as = 'rose-pine' }
+  use { 'NLKNguyen/papercolor-theme', as = 'papercolor' }
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use { "folke/tokyonight.nvim", as = "tokyonight" }
+  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+  use { "Mofiqul/dracula.nvim", as = "dracula" }
+  use { "ellisonleao/gruvbox.nvim", as = "gruvbox" }
+  use { "joshdick/onedark.vim", as = "onedark" }
+  use { "shaunsingh/solarized.nvim", as = "solarized" }
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use "folke/trouble.nvim"
+
+  use {
+    'nvim-treesitter/nvim-treesitter', 
+    run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,}
+
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use("nvim-treesitter/nvim-treesitter-context")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -50,5 +62,13 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  use("folke/zen-mode.nvim")
+  use("eandrju/cellular-automaton.nvim")
+  use("laytan/cloak.nvim")
+
+  use("nvim-tree/nvim-web-devicons")
+
+  use("vim-airline/vim-airline")
+  use("vim-airline/vim-airline-themes")
 
 end)

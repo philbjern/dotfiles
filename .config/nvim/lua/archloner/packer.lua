@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   use "folke/trouble.nvim"
 
   use {
-    'nvim-treesitter/nvim-treesitter', 
+    'nvim-treesitter/nvim-treesitter',
     run = function()
       local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
       ts_update()
@@ -70,5 +70,7 @@ return require('packer').startup(function(use)
 
   use("vim-airline/vim-airline")
   use("vim-airline/vim-airline-themes")
+
+  use {'codota/tabnine-nvim', run='./dl_binaries.sh'}
 
 end)

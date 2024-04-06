@@ -8,9 +8,15 @@ lsp.ensure_installed({
 	'rust_analyzer',
 	'bashls',
 	'cssls',
-	'java_language_server',
 	'html',
 	'pyright',
+  'clangd',
+  'jsonls',
+  'lua_ls',
+  'sqlls',
+  'svelte',
+  'tailwindcss',
+  'jdtls'
 })
 
 -- Fix Undefined global 'vim'

@@ -48,8 +48,15 @@ local plugins = {
 			sidebars = { "qf", "help" },
 			day_brightness = 0,
 		},
+	},
+	{ 
+		"Mofiqul/dracula.nvim",
+		opts = {
+			transparent_bg = true,
+			italic_comment = true,
+		},
 		init = function()
-			vim.cmd([[colorscheme solarized-osaka]])
+			vim.cmd([[colorscheme dracula]])
 		end,
 	},
 	{
@@ -575,6 +582,7 @@ local opts = {
 	dev = {
 		path = "~",
 	},
+	colorscheme = "dracula",
 }
 
 lazy.setup(plugins, opts)

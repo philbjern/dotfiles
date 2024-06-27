@@ -18,6 +18,7 @@ notify.setup({
 	timeout = 5000,
 	render = "minimal",
 	stages = "fade_in_slide_out",
+	background_colour = "#800080",
 	on_open = function(win)
 		vim.api.nvim_win_set_config(win, { focusable = false })
 	end,

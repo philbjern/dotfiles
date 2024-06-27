@@ -9,22 +9,12 @@ gitsigns.setup({
 	numhl = true,
 	signcolumn = false,
 	signs = {
-		add = { hl = "GitSignsAdd", text = icons.git.Add, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-		change = {
-			hl = "GitSignsChange",
-			text = icons.git.Change,
-			numhl = "GitSignsChangeNr",
-			linehl = "GitSignsChangeLn",
-		},
-		delete = {
-			hl = "GitSignsDelete",
-			text = icons.git.Delete,
-			numhl = "GitSignsDeleteNr",
-			linehl = "GitSignsDeleteLn",
-		},
-		topdelete = { hl = "GitSignsDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-		changedelete = { hl = "GitSignsChange", text = "_", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-		untracked = { hl = "GitSignsAdd", text = icons.git.Add, numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+		add = { text = icons.git.Add },
+		change = { text = icons.git.Change },
+		delete = { text = icons.git.Delete },
+		topdelete = { text = "‾" },
+		changedelete = { text = "_" },
+		untracked = { text = icons.git.Add },
 	},
 	preview_config = {
 		border = "rounded",

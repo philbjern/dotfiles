@@ -143,22 +143,13 @@ alias vim='nvim'
 alias python='python3'
 alias pip='pip3'
 alias clock='tty-clock -scB'
-alias tt="taskwarrior-tui"
-
 alias pipes='pipes.sh -p 4 -t 7 -f 30'
-
-alias la='ls -a'
+alias la='ls -la'
 alias mx='tmux'
-
 alias matrix='cmatrix -s -u 8'
-
 alias ports='lsof -iTCP -sTCP:LISTEN -n -P'
 alias m='matrix'
-
-alias gs='git status'
-alias gd='git diff'
-alias ga='git add'
-
+alias g=git
 alias fetch='fastfetch; cpufetch'
 
 alias so='source ~/.zshrc'
@@ -206,11 +197,13 @@ export gpt() {
 	./gpt4all-lora-quantized-OSX-intel
 }
 
+~/.tokens
+
 export artemis() {
 	/Users/archloner/dev/bin/mybroker/bin/artemis $1
 }
 
-fg () {
+fg() {
 	if [[ $# -eq 1 && $1 = - ]]; then
 		builtin fg %-
 	else
@@ -218,7 +211,7 @@ fg () {
     fi
 }
 
-export DEFAULT_VENV=djangodev
+export DEFAULT_VENV=python
 
 export venv() {
   if [ -z "$1" ]
@@ -229,11 +222,17 @@ export venv() {
   fi
 }
 
-source ~/.virtualenvs/python/bin/activate
-
+# source ~/.virtualenvs/python/bin/activate
+venv
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
 # Created by `pipx` on 2024-05-30 13:00:48
 export PATH="$PATH:/Users/archloner/.local/bin"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="/usr/local/sbin:$PATH"
+
+cat ~/banner

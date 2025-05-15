@@ -1,5 +1,7 @@
+[user]
+	name = philbjern
 [core]
-	editor = nano
+	editor = vim
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
@@ -8,11 +10,14 @@
 [color]
 	ui = auto
 [alias]
-	st = status # -sb
+	st = status 
+	s = status
 	cm = commit -m
+	c = commit -m
 	co = checkout
 	br = branch
-	bl = branch -l
+	b = branch
+	a = add
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	ll = log --oneline
@@ -21,3 +26,5 @@
 	dv = difftool -t vimdiff -y
 	gl = config --global -l
 	se = !git rev-list --all | xargs git grep -F 
+[init]
+	defaultBranch = main

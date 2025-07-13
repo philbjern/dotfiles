@@ -140,17 +140,20 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 alias vim='nvim'
+alias viim='nvim'
+alias fim='nvim'
+
 alias python='python3'
 alias pip='pip3'
 alias clock='tty-clock -scB'
 alias pipes='pipes.sh -p 4 -t 7 -f 30'
 alias la='ls -la'
 alias mx='tmux'
-alias matrix='cmatrix -s -u 8'
+alias matrix='cmatrix -u 8'
 alias ports='lsof -iTCP -sTCP:LISTEN -n -P'
-alias m='matrix'
 alias g=git
-alias fetch='fastfetch; cpufetch'
+alias gst='git status'
+alias fetch='fastfetch' 
 
 alias so='source ~/.zshrc'
 
